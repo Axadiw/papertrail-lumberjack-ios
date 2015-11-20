@@ -115,6 +115,10 @@
             self.tcpSocket = tcpSocket;
             [self connectTcpSocket];
         }
+        
+        if(self.tcpSocket.isDisconnected){
+            [self connectTcpSocket];
+        }
     }
 
     NSData *logData = [message dataUsingEncoding:NSUTF8StringEncoding];
